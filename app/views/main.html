@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{data.author[0].uri.$t}}">
+                <img src="{{data.logo.$t}}" alt="{{data.author[0].name.$t}}"/>
+            </a>
+            <span>{{data.title.$t}}</span>
+        </div>
+    </div>
+</nav>
+
+<div class="list-unstyled" ng-repeat="video in data.entry">
+    <a href="#/about/{{$index}}">
+        <div class="media">
+            <span class="pull-left">
+                <img class="media-object" src="{{video.media$group.media$thumbnail[0].url}}" alt="...">
+            </span>
+            <div class="media-body">
+                <h4 class="media-heading">{{video.author[0].name.$t}}</h4>
+                {{video.title.$t}}
+            </div>
+        </div>
+    </a>
+</div>
+
